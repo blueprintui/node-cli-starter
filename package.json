@@ -1,0 +1,45 @@
+{
+  "name": "node-cli-starter",
+  "version": "0.0.0",
+  "description": "Basic starter kit for building Node CLI applications with TypeScript.",
+  "main": "./index.js",
+  "module": "./index.js",
+  "typings": "./index.d.ts",
+  "type": "module",
+  "files": [
+    "*"
+  ],
+  "scripts": {
+    "start": "npm run build:watch & npm run node:watch",
+    "ci": "npm run clean && npm run build",
+    "clean": "del ./dist",
+    "build": "tsc --project ./tsconfig.lib.json && cpy ./package.json dist/lib/ && cpy ./README.md dist/lib/",
+    "node:watch": "nodemon ./dist/lib/index.js --path ./package.json",
+    "build:watch": "tsc --watch --project ./tsconfig.lib.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coryrylan/node-cli-starter.git"
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "typescript"
+  ],
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coryrylan/node-cli-starter/issues"
+  },
+  "homepage": "https://github.com/coryrylan/node-cli-starter#readme",
+  "devDependencies": {
+    "cpy-cli": "^3.1.1",
+    "del-cli": "^4.0.1",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "yargs": "^17.3.1"
+  }
+}
