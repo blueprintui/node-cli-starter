@@ -6,10 +6,12 @@ Minimal starter kit for building Node CLI applications with TypeScript.
 
 ## Getting Started
 
-To get started clone repo locally and run `npm install` at the root of the repo. Run `npm run ci`, if everything completes succesfully you should see the local path of the `package.json` logged to the console.
+To get started clone repo locally and run `pnpm install` at the root of the repo. Run `ncs --version` to see installed CLI.
 
-## NPM Scripts
+## Commands
 
-- `start`: runs TypeScript and Node server in watch mode during development.
-- `ci`: runs full CI process, clean/build/test
-- `build`: runs project build
+- `pnpm run start`: execute CLI via pnpm script
+- `pnpm run postinstall`: runs global pnpm link/install of CLI
+- `pnpm run uninstall`: runs global pnpm unlink/uninstall of CLI
+- `ncs --version`: log version from CLI
+- `ncs greet "world"`: log greeting command from CLI
